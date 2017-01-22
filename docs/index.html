@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        controlled-loop.js
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Copyright &copy; 2017 Bart Melton</li></ul></dd>
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="https://opensource.org/licenses/MIT">MIT</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>A javascript module for moving forward, backward, and in a non-linear fashion through an array or object one or more keys at a time.</p>
+<p>Creating a <a href="controlled-loop.html">controlled-loop</a> allows you to move through an array or object in many different ways</p>
+<ol>
+<li>iterate similar to generators with <a href="controlled-loop.html#.next">next()</a></li>
+<li>backup with <a href="controlled-loop.html#.previous">previous()</a></li>
+<li>run in bulk like a forEach() but with the ability to stop at any time</li>
+<li>chunk or batch a group of items at a time</li>
+<li>iterate over every nth item</li>
+<li>iterate in reverse </li>
+<li>reverse direction mid-flow</li>
+<li>skip over items</li>
+<li>goto a specific key</li>
+<li>Set your own &quot;keys&quot; array to only use a subset of properties or to set the order</li>
+<li>change the callback at any time</li>
+</ol>
+<h3>Installing</h3><h4>GitHub</h4><pre class="prettyprint source"><code><a href="https://github.com/bartmelton/ControlledLoop">https://github.com/bartmelton/ControlledLoop</a></code></pre><h4>Homepage</h4><pre class="prettyprint source"><code><a href="http://www.ozonecreations.com/projects/controlled-loop">http://www.ozonecreations.com/projects/controlled-loop</a></code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install controlled-loop</code></pre><h4>Bower</h4><pre class="prettyprint source"><code>bower install controlled-loop</code></pre><h3>Terminology:</h3><p>because you can move forward (0 to n) or in reverse (n to 0) the terms <code>forward</code> and <code>backward</code> can get confusing.</p>
+<ul>
+<li>the term <code>forward</code> implies the action of <a href="controlled-loop.html#.next">next()</a>, regardless of whether you are moving in reverse or not.</li>
+<li>the term <code>backwards</code> implies the action of <a href="controlled-loop.html#.previous">previous()</a>, regardless of whether you are moving in reverse or not.</li>
+<li>When operating normally (0-n), <code>forward</code> (<a href="controlled-loop.html#.next">next()</a>) would be <code>+1</code> and <code>backwards</code> (<a href="controlled-loop.html#.previous">previous()</a>) would be <code>-1</code>.</li>
+<li>When operating in reverse (n-0), <code>forward</code> (<a href="controlled-loop.html#.next">next()</a>) would be <code>-1</code> and <code>backwards</code> (<a href="controlled-loop.html#.previous">previous()</a>) would be <code>+1</code>.</li>
+</ul>
+<h3>Exports:</h3><ol>
+<li>It will export as an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property-">AMD module</a> if available, otherwise it will try to export as a <a href="http://www.commonjs.org/">CommonJS module</a></li>
+<li>If <a href="https://lodash.com/">Lodash</a> or <a href="http://underscorejs.org/">Underscore</a> are available, it adds as a mixin.</li>
+<li>If none of the above options are available it falls back to a global <a href="global.html#controlledLoop">controlledLoop</a> function attached to window, global, or this depending on which is available.</li>
+</ol></div>
+        
+
+        
+            <h3>Examples</h3>
+            
+        <p class="code-caption">Node</p>
+    
+    <pre class="prettyprint"><code>var controlledLoop = require("controlled-loop").controlledLoop </code></pre>
+
+        <p class="code-caption">Lodash/Underscore</p>
+    
+    <pre class="prettyprint"><code>_.controlledLoop()</code></pre>
+
+        <p class="code-caption">default</p>
+    
+    <pre class="prettyprint"><code>controlledLoop();</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Jan 22 2017 10:09:48 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Global - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="controlledLoop"><span class="type-signature"></span>controlledLoop<span class="signature">(data, controller<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates a <a href="controlled-loop.html">controlled-loop</a> instance.<br>
+This is not a Class and does not need the <code>new</code> operator</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">All parameters</p>
+    
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){console.log(v*2); return v*2;};var myOptions = {increment:2, startAt:1};var loop = controlledLoop(myArray,doubleValue);// => creates a controlled-loop that will iterate over even numbered values in the array and double them.// => Outputs to the console:// 4// 8// 12// 16// 20</code></pre>
+
+        <p class="code-caption">Without options</p>
+    
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){ console.log(v*2); return v*2;};var loop = controlledLoop(myArray,doubleValue);// => Outputs to the console:// 2// 4// 6// 8// 10// 12// 14// 16// 18// 20</code></pre>
+
+        <p class="code-caption">Without controller</p>
+    
+    <pre class="prettyprint"><code>var myobj = {a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9, j:10};var myOptions = {keys:['a','d','e','h'], controller: function(v,k){ console.log("Key: "+k); console.log("Value: "+v);}}var loop = controlledLoop(myobj, myOptions);// => Outputs to the console:// Key: a// Value: 1// Key: d// Value: 4// Key: e// Value: 5// Key: h// Value: 8</code></pre>
+
+        <p class="code-caption">Without options or controller</p>
+    
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var loop = controlledLoop(myArray);// => creates a controlled-loop that will iterate over all values in the array and echo the value.</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>controller</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Controller">Controller</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The callback function, the default function is just an echo</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Options">Options</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Additional options.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the controlled loop instance</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="controlled-loop.html">controlled-loop</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Reference Types</h3>
+
+        
+                
+
+    
+
+    <h4 class="name" id="Controller"><span class="type-signature"></span>Controller<span class="signature">(value, key, params<span class="signature-attributes">nullable</span>, loop)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>function(value){ return value }</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The controller/callback to be passed into a <a href="global.html#controlledLoop">controlledLoop</a> function</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value of the current step in the data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The key of the current step in the data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>any additional parameters passed in from one of the processing</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>loop</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="controlled-loop.html">controlled-loop</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The controlled loop instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Options">Options</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>increment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>How much to increment the position within the options.keys by each time <a href="controlled-loop.html#.next">controlled-loop.next</a>, <a href="controlled-loop.html#.previous">controlled-loop.previous</a>, or <a href="controlled-loop.html#.run">controlled-loop.run</a> are called.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startAt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StartAt">StartAt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Where to start at within the data if you do not wish for the first element processed to be key 0.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The object or array keys to iterate through. Can be used for a partial list or sorted list of keys, etc. If not provide, [Object.keys()]{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys} will be used. If the initial <code>data</code> is an array with missing elements (e.g. var a=[]; a[0]=1; a[1]=2; a[12]=3), only the defined keys will be run (e.g. keys=[0,1,12]).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reverse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>whether to start the loop in reverse</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>apply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>if <code>true</code> then the 'controller' function will be <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">Function.apply()</a> using the 'target'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The target that the controller will be applied to. If 'apply' is true and target is <code>_null_</code> or <code>_true_</code>, the 'data' array/object used to set up the loop will be used.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>controller</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>function(v)\{ return v; \}</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The controller function can be passed in as an options property also. If a controller is passed in both places, this one will take precedence.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>The options object to be passed into a <a href="global.html#controlledLoop">controlledLoop</a> function. 
+All properties are optional</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="StartAt">StartAt</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>0</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The <code>StartAt</code> number is used in the initial <a href="global.html#Options">options</a> and as a parameter for <a href="controlled-loop.html#.reset">reset()</a> and <a href="controlled-loop.html#.reverse">reverse()</a></p>
+<p>The controlled loop maintains an internal array of the keys and its current position within that array.</p>
+<p>By default, on initialization or <a href="controlled-loop.html#.reset">reset()</a>, the current position will be such that when you use <a href="controlled-loop.html#.next">next()</a> it will go to position 0 with the keys array (or the end if going in reverse). </p>
+<p>If you wish to the first element processed to be something other than 0, then use a <code>StartAt</code>.
+For example, if you are incrementing by 3 and want the first element processed to be the 3rd key, the <code>StartAt</code> option would be 2 (0,1,2).</p>
+<p>This is calculated as such:<br>
+Normal: position = 0 + StartAt - Increment<br>
+Reversed: position = (length-1) - StartAt + Increment</p>
+<p>So it is possible that on initialization or <a href="controlled-loop.html#.reset">reset()</a> that both <a href="controlled-loop.html#.next">next()</a> and <a href="controlled-loop.html#.previous">previous()</a> are possible</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Starting at the 3rd item</p>
+    
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var myOptions = {increment:3, startAt:2};var loop=controlledLoop(myArray,myOptions);loop.next();// => { value:3, key: 2, done: false, donep:true}loop.reverse(true, 2).next();// => { value:8, key: 7, done: false, donep:true}</code></pre>
+
+
+
+            
+                
+<h4 class="name" id="ReturnValue">ReturnValue</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the value returned by the <code>controller</code>. Will be <code>undefined</code> if the process tries to run an &quot;out-of-bounds&quot; data (e.g. using <a href="controlled-loop.html#.next">next()</a> after reaching the end of the data)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the data key which was processed by the <code>controller</code>. Will be <code>undefined</code> if the process tries to run an &quot;out-of-bounds&quot; data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>done</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#isDone">isDone</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether you have hit the end of the the data going <code>forward</code>. Attempting <a href="controlled-loop.html#.next">next()</a>, or similar will return as &quot;out-of-bounds&quot; result but not move the internal position.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>donep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#isDone">isDone</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether you have hit the end of the the data going <code>backwards.</code> Attempting <a href="controlled-loop.html#.previous">previous()</a>, or similar, will return as &quot;out-of-bounds&quot; result but not move the internal position.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>The return value from any function which runs the <code>controller</code> (e.g. <a href="controlled-loop.html#.next">next()</a>, <a href="controlled-loop.html#.previous">previous()</a>, <a href="controlled-loop.html#.repeat">repeat()</a>, <a href="controlled-loop.html#.getLastReturn">getLastReturn()</a>)</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="isDone">isDone</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>A boolean whether processing has reached the end of the data.  </p>
+<p>If the <code>increment</code> is greater than 1, then the position may not be at the last item in the data. </p>
+<p>It means that you cannot move by the <code>increment</code> amount without going &quot;out-of-bounds&quot; (0 or length-1).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10]; // last = 9var myOptions = {increment:5};var loop=controlledLoop(myArray,myOptions);loop.next();// => { value: 1, key: 0, done: false, donep: true}// internal position = 0// You cannot use previous() because 0-5=-5 which is "out of bounds"loop.next();// => { value: 6, key: 5, done: true, donep: false}// internal position = 5// You cannot use next() because 5+5=10 which is "out-of bounds"</code></pre>
+
+
+
+            
+                
+<h4 class="name" id="Status">Status</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>where the internal marker is (the current index in the keys array)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The index of the last item in the keys array (length-1)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>done</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#isDone">isDone</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether it is currently complete moving <code>forward</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>donep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#isDone">isDone</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether it is currently complete moving <code>backward</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>increment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the current increment amount</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>values</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of the values returned by the <code>controller</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the keys for the loop data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reversed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the loop is reversed</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>paused</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the loop is paused</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>applied</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the controller calls are being applied to an object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target the controller is being applied to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Jan 22 2017 10:09:48 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

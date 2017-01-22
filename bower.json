@@ -1,0 +1,24 @@
+{
+  "name": "controlled-loop",
+  "description": "A javascript module for moving forward, backward, and in a non-linear fashion through an array or object one or more keys at a time.",
+  "main": "controlled-loop.js",
+  "authors": [
+    "Bart Melton"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "iterator",
+    "loop",
+    "next",
+    "previous"
+  ],
+  "homepage": "https://github.com/bartmelton/ControlledLoop",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
