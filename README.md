@@ -33,7 +33,9 @@ Creating a controlled-loop allows you to move through an array or object in many
   ```
   bower install controlled-loop
   ```
-    
+  #### CDN
+  [https://www.jsdelivr.com/projects/controlled-loop](https://www.jsdelivr.com/projects/controlled-loop)
+  
  
 
   ### Exports:

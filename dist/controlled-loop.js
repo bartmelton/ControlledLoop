@@ -46,6 +46,11 @@
  * bower install controlled-loop
  * ```
  * 
+ * #### CDN
+ * ```
+ * {@link https://www.jsdelivr.com/projects/controlled-loop}
+ * ```
+ * 
  *
  * ### Terminology:
  * because you can move forward (0 to n) or in reverse (n to 0) the terms `forward` and `backward` can get confusing.
