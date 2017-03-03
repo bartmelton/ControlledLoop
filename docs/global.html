@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.getValue">getValue</a></li><li data-type='method'><a href="controlled-loop.html#.clearValues">clearValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li><li data-type='method'><a href="controlled-loop.html#.defer">defer</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
 </nav>
 
 <div id="main">
@@ -178,13 +178,13 @@ This is not a Class and does not need the <code>new</code> operator</p>
     
         <p class="code-caption">All parameters</p>
     
-    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){console.log(v*2); return v*2;};var myOptions = {increment:2, startAt:1};var loop = controlledLoop(myArray,doubleValue);// => creates a controlled-loop that will iterate over even numbered values in the array and double them.// => Outputs to the console:// 4// 8// 12// 16// 20</code></pre>
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){console.log(v*2); return v*2;};var myOptions = {increment:2, startAt:1};var loop = controlledLoop(myArray, doubleValue, myOptions);// => creates a controlled-loop that will iterate over even numbered values in the array and double them.// => Outputs to the console:// 4// 8// 12// 16// 20</code></pre>
 
         <p class="code-caption">Without options</p>
     
-    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){ console.log(v*2); return v*2;};var loop = controlledLoop(myArray,doubleValue);// => Outputs to the console:// 2// 4// 6// 8// 10// 12// 14// 16// 18// 20</code></pre>
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10];var doubleValue = function(v){ console.log(v*2); return v*2;};var loop = controlledLoop(myArray, doubleValue);// => Outputs to the console:// 2// 4// 6// 8// 10// 12// 14// 16// 18// 20</code></pre>
 
-        <p class="code-caption">Without controller</p>
+        <p class="code-caption">Without controller as an option</p>
     
     <pre class="prettyprint"><code>var myobj = {a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9, j:10};var myOptions = {keys:['a','d','e','h'], controller: function(v,k){ console.log("Key: "+k); console.log("Value: "+v);}}var loop = controlledLoop(myobj, myOptions);// => Outputs to the console:// Key: a// Value: 1// Key: d// Value: 4// Key: e// Value: 5// Key: h// Value: 8</code></pre>
 
@@ -370,7 +370,7 @@ This is not a Class and does not need the <code>new</code> operator</p>
 
     
 
-    <h4 class="name" id="Controller"><span class="type-signature"></span>Controller<span class="signature">(value, key, params<span class="signature-attributes">nullable</span>, loop)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Controller"><span class="type-signature"></span>Controller<span class="signature">(value, key, loop, &hellip;params)</span><span class="type-signature"></span></h4>
 
     
 
@@ -527,39 +527,6 @@ This is not a Class and does not need the <code>new</code> operator</p>
 
         <tr>
             
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                    &lt;nullable><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>any additional parameters passed in from one of the processing</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>loop</code></td>
             
 
@@ -585,6 +552,39 @@ This is not a Class and does not need the <code>new</code> operator</p>
             
 
             <td class="description last"><p>The controlled loop instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>any additional parameters passed in from one of the processing functions (e.g. loop.next(param1, param2))</p></td>
         </tr>
 
     
@@ -832,41 +832,6 @@ This is not a Class and does not need the <code>new</code> operator</p>
             
                 
 <span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>if <code>true</code> then the 'controller' function will be <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">Function.apply()</a> using the 'target'.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>target</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
 |
 
 <span class="param-type">*</span>
@@ -891,7 +856,7 @@ This is not a Class and does not need the <code>new</code> operator</p>
                 </td>
             
 
-            <td class="description last"><p>The target that the controller will be applied to. If 'apply' is true and target is <code>_null_</code> or <code>_true_</code>, the 'data' array/object used to set up the loop will be used.</p></td>
+            <td class="description last"><p>if <code>true</code> then the 'controller' function will be <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">Function.apply()</a> using the 'data'. If any other non-falsy value, the function will be applied to that.</p></td>
         </tr>
 
     
@@ -923,7 +888,7 @@ This is not a Class and does not need the <code>new</code> operator</p>
             
                 <td class="default">
                 
-                    <code>function(v)\{ return v; \}</code>
+                    <code>function(v){ return v; }</code>
                 
                 </td>
             
@@ -941,7 +906,7 @@ This is not a Class and does not need the <code>new</code> operator</p>
 
 
 <div class="description">
-    <p>The options object to be passed into a <a href="global.html#controlledLoop">controlledLoop</a> function. 
+    <p>The options object to be passed into a <a href="global.html#controlledLoop">controlledLoop</a> function.
 All properties are optional</p>
 </div>
 
@@ -1017,7 +982,7 @@ All properties are optional</p>
 <div class="description">
     <p>The <code>StartAt</code> number is used in the initial <a href="global.html#Options">options</a> and as a parameter for <a href="controlled-loop.html#.reset">reset()</a> and <a href="controlled-loop.html#.reverse">reverse()</a></p>
 <p>The controlled loop maintains an internal array of the keys and its current position within that array.</p>
-<p>By default, on initialization or <a href="controlled-loop.html#.reset">reset()</a>, the current position will be such that when you use <a href="controlled-loop.html#.next">next()</a> it will go to position 0 with the keys array (or the end if going in reverse). </p>
+<p>By default, on initialization or <a href="controlled-loop.html#.reset">reset()</a>, the current position will be such that when you use <a href="controlled-loop.html#.next">next()</a> it will go to position 0 with the keys array (or the end if going in reverse).</p>
 <p>If you wish to the first element processed to be something other than 0, then use a <code>StartAt</code>.
 For example, if you are incrementing by 3 and want the first element processed to be the 3rd key, the <code>StartAt</code> option would be 2 (0,1,2).</p>
 <p>This is calculated as such:<br>
@@ -1290,8 +1255,8 @@ Reversed: position = (length-1) - StartAt + Increment</p>
 
 
 <div class="description">
-    <p>A boolean whether processing has reached the end of the data.  </p>
-<p>If the <code>increment</code> is greater than 1, then the position may not be at the last item in the data. </p>
+    <p>A boolean whether processing has reached the end of the data.</p>
+<p>If the <code>increment</code> is greater than 1, then the position may not be at the last item in the data.</p>
 <p>It means that you cannot move by the <code>increment</code> amount without going &quot;out-of-bounds&quot; (0 or length-1).</p>
 </div>
 
@@ -1679,7 +1644,7 @@ Reversed: position = (length-1) - StartAt + Increment</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Jan 22 2017 10:59:44 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Mar 03 2017 02:14:51 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

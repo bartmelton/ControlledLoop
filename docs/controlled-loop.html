@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#controlledLoop">controlledLoop</a></li></ul><h3>Interfaces</h3><ul><li><a href="controlled-loop.html">controlled-loop</a><ul class='methods'><li data-type='method'><a href="controlled-loop.html#.next">next</a></li><li data-type='method'><a href="controlled-loop.html#.previous">previous</a></li><li data-type='method'><a href="controlled-loop.html#.repeat">repeat</a></li><li data-type='method'><a href="controlled-loop.html#.run">run</a></li><li data-type='method'><a href="controlled-loop.html#.runBack">runBack</a></li><li data-type='method'><a href="controlled-loop.html#.reverse">reverse</a></li><li data-type='method'><a href="controlled-loop.html#.reset">reset</a></li><li data-type='method'><a href="controlled-loop.html#.skip">skip</a></li><li data-type='method'><a href="controlled-loop.html#.gotoKey">gotoKey</a></li><li data-type='method'><a href="controlled-loop.html#.setOptions">setOptions</a></li><li data-type='method'><a href="controlled-loop.html#.isComplete">isComplete</a></li><li data-type='method'><a href="controlled-loop.html#.pause">pause</a></li><li data-type='method'><a href="controlled-loop.html#.getValues">getValues</a></li><li data-type='method'><a href="controlled-loop.html#.getValue">getValue</a></li><li data-type='method'><a href="controlled-loop.html#.clearValues">clearValues</a></li><li data-type='method'><a href="controlled-loop.html#.status">status</a></li><li data-type='method'><a href="controlled-loop.html#.getLastReturn">getLastReturn</a></li><li data-type='method'><a href="controlled-loop.html#.defer">defer</a></li></ul></li></ul><h3>References</h3><ul><li><a href="global.html#Controller">Controller</a></li><li><a href="global.html#Options">Options</a></li><li><a href="global.html#StartAt">StartAt</a></li><li><a href="global.html#ReturnValue">ReturnValue</a></li><li><a href="global.html#isDone">isDone</a></li><li><a href="global.html#Status">Status</a></li></ul>
 </nav>
 
 <div id="main">
@@ -115,7 +115,7 @@
 
     
 
-    <h4 class="name" id=".next"><span class="type-signature">(static) </span>next<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>|<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
+    <h4 class="name" id=".next"><span class="type-signature">(static) </span>next<span class="signature">(&hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>|<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
 
     
 
@@ -169,7 +169,7 @@
 
 
 <div class="description">
-    <p>Moves <code>forward</code> in the data and runs the <code>controller</code> on the key/value pair. 
+    <p>Moves <code>forward</code> in the data and runs the <code>controller</code> on the key/value pair.
     If the instance is not <a href="controlled-loop.html#.pause">paused</a> or if the number of iterations has been set, <code>next()</code> will continue to call itself until it hits the end of the data, the instance is <code>paused</code>, or the number of called iterations have been processed</p>
 </div>
 
@@ -231,12 +231,14 @@
                 
 
                 
+                    &lt;repeatable><br>
+                
                 </td>
             
 
             
 
-            <td class="description last"><p>additional data to be passed to the <code>controller</code></p></td>
+            <td class="description last"><p>additional parameters to pass to the <code>controller</code></p></td>
         </tr>
 
     
@@ -284,7 +286,7 @@
 
     
 
-    <h4 class="name" id=".previous"><span class="type-signature">(static) </span>previous<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
+    <h4 class="name" id=".previous"><span class="type-signature">(static) </span>previous<span class="signature">(&hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
 
     
 
@@ -401,12 +403,14 @@
                 
 
                 
+                    &lt;repeatable><br>
+                
                 </td>
             
 
             
 
-            <td class="description last"><p>additional data to be passed to the <code>controller</code></p></td>
+            <td class="description last"><p>additional parameters to pass to the <code>controller</code></p></td>
         </tr>
 
     
@@ -451,7 +455,7 @@
 
     
 
-    <h4 class="name" id=".repeat"><span class="type-signature">(static) </span>repeat<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
+    <h4 class="name" id=".repeat"><span class="type-signature">(static) </span>repeat<span class="signature">(&hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
 
     
 
@@ -559,12 +563,14 @@
                 
 
                 
+                    &lt;repeatable><br>
+                
                 </td>
             
 
             
 
-            <td class="description last"><p>additional data to be passed to the <code>controller</code></p></td>
+            <td class="description last"><p>additional parameters to pass to the <code>controller</code></p></td>
         </tr>
 
     
@@ -609,7 +615,7 @@
 
     
 
-    <h4 class="name" id=".run"><span class="type-signature">(static) </span>run<span class="signature">(params<span class="signature-attributes">opt</span>, count<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".run"><span class="type-signature">(static) </span>run<span class="signature">(count<span class="signature-attributes">opt</span>, &hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -663,7 +669,7 @@
 
 
 <div class="description">
-    <p>Loops through the data without stopping (like a forEach()).<br> 
+    <p>Loops through the data without stopping (like a forEach()).<br>
  The equivalent of calling <code>loop.pause(false).next()</code>. <br>
     <strong>NOTE: </strong>The <code>controller</code> function can call <a href="controlled-loop.html#.pause">pause()</a> at any time to return to normal incremental processing.</p>
 <p> If the parameter <code>count</code> is added, the loop will run <code>count</code> times instead of continuously</p>
@@ -679,7 +685,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10]; var loop=controlledLoop(myArray); loop.run(null,3); // is equivalent to loop.next().next().next(); </code></pre>
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10]; var loop=controlledLoop(myArray); loop.run(3); // is equivalent to loop.next().next().next(); </code></pre>
 
 
 
@@ -711,39 +717,6 @@
 
         <tr>
             
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>additional data to be passed to the <code>controller</code></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>count</code></td>
             
 
@@ -770,7 +743,42 @@
 
             
 
-            <td class="description last"><p>if count is passed, <a href="controlled-loop.html#.next">next()</a> will be called for this many iterations.</p></td>
+            <td class="description last"><p>if count is passed, <a href="controlled-loop.html#.next">next()</a> will be called for this many iterations. Pass null/false or a number &lt;1 to run fully while passing parameters.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>additional parameters to pass to the <code>controller</code></p></td>
         </tr>
 
     
@@ -815,7 +823,7 @@
 
     
 
-    <h4 class="name" id=".runBack"><span class="type-signature">(static) </span>runBack<span class="signature">(params<span class="signature-attributes">opt</span>, count<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".runBack"><span class="type-signature">(static) </span>runBack<span class="signature">(count<span class="signature-attributes">opt</span>, &hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -869,7 +877,7 @@
 
 
 <div class="description">
-    <p>Loops through the data without stopping (like a forEach()).<br> 
+    <p>Loops through the data without stopping (like a forEach()).<br>
  The equivalent of calling <code>loop.pause(false).previous()</code>. <br>
     <strong>NOTE: </strong>The <code>controller</code> function can call <a href="controlled-loop.html#.pause">pause()</a> at any time to return to normal incremental processing.</p>
 <p> If the parameter <code>count</code> is added, the loop will run <code>count</code> times instead of continuously</p>
@@ -885,7 +893,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10]; var loop=controlledLoop(myArray); loop.runBack(null,3); // is equivalent to loop.previous().previous().previous();	</code></pre>
+    <pre class="prettyprint"><code>var myArray = [1,2,3,4,5,6,7,8,9,10]; var loop=controlledLoop(myArray); loop.runBack(3); // is equivalent to loop.previous().previous().previous();	</code></pre>
 
 
 
@@ -917,39 +925,6 @@
 
         <tr>
             
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>additional data to be passed to the <code>controller</code></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>count</code></td>
             
 
@@ -976,7 +951,42 @@
 
             
 
-            <td class="description last"><p>if count is passed, <a href="controlled-loop.html#.previous">previous()</a> will be called for this many iterations.</p></td>
+            <td class="description last"><p>if count is passed, <a href="controlled-loop.html#.previous">previous()</a> will be called for this many iterations.  Pass null or a number &lt;1 to run fully while passing parameters.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>additional parameters to pass to the <code>controller</code></p></td>
         </tr>
 
     
@@ -1021,7 +1031,7 @@
 
     
 
-    <h4 class="name" id=".reverse"><span class="type-signature">(static) </span>reverse<span class="signature">(reset<span class="signature-attributes">opt</span>, position<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
+    <h4 class="name" id=".reverse"><span class="type-signature">(static) </span>reverse<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
 
     
 
@@ -1098,6 +1108,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1108,13 +1120,13 @@
 
         <tr>
             
-                <td class="name"><code>reset</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">object</span>
 
 
             
@@ -1133,41 +1145,14 @@
             
 
             
-
-            <td class="description last"><p>Whether to <a href="controlled-loop.html#.reset">reset</a> back to the beginning of the data.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>position</code></td>
-            
-
-            <td class="type">
-            
+                <td class="default">
                 
-<span class="param-type">startAtNumber</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
+                    <code>{reset:false, clear:false, position:-1}</code>
                 
                 </td>
             
 
-            
-
-            <td class="description last"><p>The position to pass to <a href="controlled-loop.html#.reset">reset()</a></p></td>
+            <td class="description last"><p>Whether to <a href="controlled-loop.html#.reset">reset</a> back to the beginning of the data or to the specified position and whether to <a href="controlled-loop.html#.clearValues">clear</a> the values. All 3 properties are optional.</p></td>
         </tr>
 
     
@@ -1212,7 +1197,7 @@
 
     
 
-    <h4 class="name" id=".reset"><span class="type-signature">(static) </span>reset<span class="signature">(position<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
+    <h4 class="name" id=".reset"><span class="type-signature">(static) </span>reset<span class="signature">(clear<span class="signature-attributes">opt</span>, position<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
 
     
 
@@ -1259,7 +1244,7 @@
 
 
 <div class="description">
-    <p>Returns the position back to the <a href="global.html#StartAt">StartAt</a> or the specified position.</p>
+    <p>Returns the position back to the <a href="global.html#StartAt">StartAt</a> or the specified position and optionally clears the values.</p>
 </div>
 
 
@@ -1299,6 +1284,39 @@
 
         <tr>
             
+                <td class="name"><code>clear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether to clear the values</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>position</code></td>
             
 
@@ -1325,7 +1343,7 @@
 
             
 
-            <td class="description last"><p>The position to reset to. This overrides but does not update the <a href="global.html#StartAt">StartAt</a> option.</p></td>
+            <td class="description last"><p>The position to reset to. This overrides but does not update the <a href="global.html#StartAt">StartAt</a> option. Any position that is out of bounds (<0 or >keys.length-1) will be ignored.</p></td>
         </tr>
 
     
@@ -1370,7 +1388,7 @@
 
     
 
-    <h4 class="name" id=".skip"><span class="type-signature">(static) </span>skip<span class="signature">(steps, execute, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>|<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
+    <h4 class="name" id=".skip"><span class="type-signature">(static) </span>skip<span class="signature">(steps, execute, &hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>|<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
 
     
 
@@ -1541,6 +1559,8 @@
                 
 
                 
+                    &lt;repeatable><br>
+                
                 </td>
             
 
@@ -1600,7 +1620,7 @@
 
     
 
-    <h4 class="name" id=".gotoKey"><span class="type-signature">(static) </span>gotoKey<span class="signature">(key, execute, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>|<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
+    <h4 class="name" id=".gotoKey"><span class="type-signature">(static) </span>gotoKey<span class="signature">(key, execute, &hellip;params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>|<a href="global.html#ReturnValue">ReturnValue</a>}</span></h4>
 
     
 
@@ -1654,7 +1674,7 @@
 
 
 <div class="description">
-    <p>Looks up a specified key and moves the position to that index. </p>
+    <p>Looks up a specified key and moves the position to that index.</p>
 <p> <strong>NOTE:</strong> If the key does not exist, it returns the <code>out-of-bounds</code> object and does not move the position.</p>
 </div>
 
@@ -1780,6 +1800,8 @@
 
                 
 
+                
+                    &lt;repeatable><br>
                 
                 </td>
             
@@ -2449,7 +2471,7 @@
 
             
 
-            <td class="description last"><p>Return an Object of key/returns instead of an array</p></td>
+            <td class="description last"><p>Return an Object of key/return values instead of an array</p></td>
         </tr>
 
     
@@ -2484,6 +2506,301 @@
 |
 
 <span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getValue"><span class="type-signature">(static) </span>getValue<span class="signature">(key, asObject<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Gets the value of a single key that has been returned by the 'controller'.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>the key which you want the processed value for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>asObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Return as an object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>either the processed value for the key or if asObject {key:value}</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".clearValues"><span class="type-signature">(static) </span>clearValues<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="controlled-loop.html">controlled-loop</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Clears the values of the loop</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="controlled-loop.html">controlled-loop</a></span>
 
 
     </dd>
@@ -2695,6 +3012,110 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id=".defer"><span class="type-signature">(static) </span>defer<span class="signature">()</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates a function that can be called within a Promise which will correctly store the value.
+    The defered function takes a single paramter, the value to be stored, and will then return a <a href="global.html#ReturnValue">ReturnValue</a> the same as any other call.</p>
+<p> To use within your callback, assign loop.defer() before your Promise call, then when your Promise returns, call the defered function with the value you wish you assign.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// looping through an array of URLs one at a time var loop=controlledLoop(data,function(val,key,loopObj){		var cb=loopObj.defer();		$http.get(val,function(result){				cb(result.data);				loopObj.next();		});	});	</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
     
 
     
@@ -2712,7 +3133,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Jan 22 2017 10:59:44 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Mar 03 2017 02:14:51 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
