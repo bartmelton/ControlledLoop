@@ -1,7 +1,9 @@
 'use strict';
 /**
+ * ControlledLoop v2.0.0
  * @copyright Copyright &copy; 2017 Bart Melton
  * @license  {@link https://opensource.org/licenses/MIT MIT}
+ * @version 2.0.0
  *
  *
  * @file
