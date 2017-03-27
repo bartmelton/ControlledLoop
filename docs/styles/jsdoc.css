@@ -175,6 +175,26 @@ nav h3 {
   color: #000;
 }
 
+nav h4 {
+  margin-top: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin: 10px 0 10px;
+  padding: 0;
+}
+
+nav h5 {
+  margin-top: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 10px 0 10px;
+  padding: 0;
+}
+
 nav ul {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', arial, sans-serif;
   font-size: 100%;

@@ -1,9 +1,9 @@
 'use strict';
 /**
- * ControlledLoop v2.0.0
+ * ControlledLoop v2.0.1
  * @copyright Copyright &copy; 2017 Bart Melton
  * @license  {@link https://opensource.org/licenses/MIT MIT}
- * @version 2.0.0
+ * @version 2.0.1
  *
  *
  * @file
@@ -134,11 +134,11 @@
  /**
   * The controller/callback to be passed into a {@link controlledLoop} function
   *
-  * @callback Controller
+  * @reference {function} Controller
   * @default function(value){ return value }
   * @param {*} value - The value of the current step in the data
   * @param {(string|number)} key - The key of the current step in the data
-	* @param {controlled-loop} loop - The controlled loop instance
+  * @param {controlled-loop} loop - The controlled loop instance
   * @param {...*} params - any additional parameters passed in from one of the processing functions (e.g. loop.next(param1, param2))
  */
 
@@ -146,7 +146,7 @@
  * The options object to be passed into a {@link controlledLoop} function.
  * All properties are optional
  *
- * @typedef {Object} Options
+ * @reference {Object} Options
  * @property {number} [increment=1] - How much to increment the position within the {@link options.keys} by each time {@link controlled-loop.next}, {@link controlled-loop.previous}, or {@link controlled-loop.run} are called.
  * @property {StartAt} [startAt=0] - Where to start at within the data if you do not wish for the first element processed to be key 0.
  * @property {array} [keys]	- The object or array keys to iterate through. Can be used for a partial list or sorted list of keys, etc. If not provide, [Object.keys()]{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys} will be used. If the initial `data` is an array with missing elements (e.g. var a=[]; a[0]=1; a[1]=2; a[12]=3), only the defined keys will be run (e.g. keys=[0,1,12]).
@@ -181,7 +181,7 @@
   * loop.reverse(true, 2).next();
   * // => { value:8, key: 7, done: false, donep:true}
   *
-  * @typedef {number} StartAt
+  * @reference {number} StartAt
   * @default 0
   */
 	var controlledLoop=function(data,controller,options){
@@ -229,7 +229,7 @@
 /**
  * The return value from any function which runs the `controller` (e.g. {@link controlled-loop.next next()}, {@link controlled-loop.previous previous()}, {@link controlled-loop.repeat repeat()}, {@link controlled-loop.getLastReturn getLastReturn()})
  *
- * @typedef ReturnValue
+ * @reference ReturnValue
  * @type {Object}
  * @property {*} value - the value returned by the `controller`. Will be `undefined` if the process tries to run an "out-of-bounds" data (e.g. using {@link controlled-loop.next next()} after reaching the end of the data)
  * @property {string|number} key - the data key which was processed by the `controller`. Will be `undefined` if the process tries to run an "out-of-bounds" data
@@ -258,7 +258,7 @@
  * // internal position = 5
  * // You cannot use next() because 5+5=10 which is "out-of bounds"
  *
- * @typedef {boolean} isDone
+ * @reference {boolean} isDone
  */
 
  /**
@@ -371,6 +371,7 @@
  *
  *  @memberof controlled-loop
  *  @function reverse
+ *	@category utility
  *  @param {object} [options={reset:false, clear:false, position:-1}] - Whether to {@link controlled-loop.reset reset} back to the beginning of the data or to the specified position and whether to {@link controlled-loop.clearValues clear} the values. All 3 properties are optional.
  *  @return {controlled-loop}
 */
@@ -398,6 +399,7 @@
  *
  *  @memberof controlled-loop
  *  @function reset
+ *	@category utility
  *  @param {boolean} [clear] - whether to clear the values
  *  @param {startAtNumber} [position] - The position to reset to. This overrides but does not update the {@link StartAt} option. Any position that is out of bounds (<0 or >keys.length-1) will be ignored.
  *  @return {controlled-loop}
@@ -420,6 +422,7 @@
  *
  *  @memberof controlled-loop
  *  @function skip
+ *	@category utility
  *  @param {number} steps - the number of increments to skip. The value can be negative to skip `backwards`.
  *  @param {boolean} execute - whether to run {@link controlled-loop.repeat repeat()} when done moving.
  *  @param {...*} [params] - if execute, the additional data to pass to {@link controlled-loop.repeat repeat()}
@@ -447,6 +450,7 @@
  *
  *  @memberof controlled-loop
  *  @function gotoKey
+ *	@category utility
  *  @param {number|string} key - The key to look for
  *  @param {boolean} execute - whether to run {@link controlled-loop.repeat repeat()} when done moving.
  *  @param {...*} [params] - if execute, the additional data to pass to {@link controlled-loop.repeat repeat()}
@@ -494,6 +498,7 @@
  *
  *	@memberof controlled-loop
  *  @function setOptions
+ *	@category utility
  *  @param {string|object} opt - Either the name of the property to set or an object with multiple properties
  *	@param value - The value to set if the first parameter is of type string.
  *  @return {controlled-loop}
@@ -519,6 +524,7 @@
  *
  *	@memberof controlled-loop
  *  @function isComplete
+ *	@category informational
  *  @param {boolean} previous - Whether to calculate as 'backward` instead of `forward`. (same as the `donep` property in returns)
  *  @return {boolean}
 */
@@ -534,6 +540,7 @@
  *
  * 	@memberof controlled-loop
  *  @function pause
+ *	@category utility
  *  @param {boolean} [state] - If a value is passed, the paused state will be set to that value
  *  @return {controlled-loop}
 */
@@ -546,6 +553,7 @@
  *
  *	@memberof controlled-loop
  *  @function getValues
+ *	@category informational
  *  @param {boolean} [asObject] - Return an Object of key/return values instead of an array
  *  @return {array|object}
 */
@@ -564,6 +572,7 @@
  *
  *	@memberof controlled-loop
  *  @function getValue
+ *	@category informational
  *  @param {string|number} key - the key which you want the processed value for
  *  @param {boolean} [asObject] - Return as an object
  *  @return {*} - either the processed value for the key or if asObject {key:value}
@@ -587,6 +596,7 @@
  *
  *	@memberof controlled-loop
  *  @function clearValues
+ *	@category utility
  *  @return {controlled-loop}
 */
 			clearValues:function(){
@@ -599,12 +609,13 @@
  *  @see {@link Status}
  *
  * 	@memberof controlled-loop
+ *	@category informational
  *  @function status
  *  @return {Status}
 */
 
 /**
- * @typedef {object} Status
+ * @reference {object} Status
  * @property {number} position - where the internal marker is (the current index in the keys array)
  * @property {number} end - The index of the last item in the keys array (length-1)
  * @property {isDone} done - Whether it is currently complete moving `forward`
@@ -637,6 +648,7 @@
  *
  * 	@memberof controlled-loop
  *  @function getLastReturn
+ *	@category informational
  *  @return {ReturnValue}
  *
 */
@@ -661,6 +673,7 @@
  *
  * 	@memberof controlled-loop
  *  @function defer
+ *	@category utility
  *  @return {Function}
  *
 */

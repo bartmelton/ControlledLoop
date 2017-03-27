@@ -1,6 +1,6 @@
 {
   "name": "controlled-loop",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A javascript module for moving forward, backward, and in a non-linear fashion through an array or object one or more keys at a time.",
   "main": "controlled-loop.js",
   "directories": {
